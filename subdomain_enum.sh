@@ -15,15 +15,15 @@ fi
 domains=$1
 output=$2
 
-cat $domains | /root/work/bin/assetfinder > new_file1
+cat $domains | /root/bin/assetfinder > new_file1
 
-/root/work/bin/subfinder -dL $domains -silent -recursive > new_file2
+/root/bin/subfinder -dL $domains -silent -recursive > new_file2
 
 amass enum -df $domains > new_file3
 
 while read line
 do
-        /root/work/bin/sublist3r -d $line 2> /dev/null | grep "$line" | sed '1d'  >> new_file4
+        /root/sublist3r -d $line 2> /dev/null | grep "$line" | sed '1d'  >> new_file4
 done < $domains
 
 cat new_file1 > new_file
