@@ -105,3 +105,9 @@ do
 done < finding_types
 
 rm new_file new_file1 new_file2 new_file3 new_file4 finding_types
+
+
+
+
+
+
